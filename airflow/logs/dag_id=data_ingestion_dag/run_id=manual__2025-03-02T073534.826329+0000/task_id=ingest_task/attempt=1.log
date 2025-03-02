@@ -1,0 +1,17 @@
+[2025-03-02T08:35:42.906+0100] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-02T08:35:42.915+0100] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_dag.ingest_task manual__2025-03-02T07:35:34.826329+00:00 [queued]>
+[2025-03-02T08:35:42.922+0100] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_dag.ingest_task manual__2025-03-02T07:35:34.826329+00:00 [queued]>
+[2025-03-02T08:35:42.922+0100] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-02T08:35:42.937+0100] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): ingest_task> on 2025-03-02 07:35:34.826329+00:00
+[2025-03-02T08:35:42.939+0100] {standard_task_runner.py:72} INFO - Started process 110756 to run task
+[2025-03-02T08:35:42.941+0100] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'data_ingestion_dag', 'ingest_task', 'manual__2025-03-02T07:35:34.826329+00:00', '--job-id', '108', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_ingest_dag.py', '--cfg-path', '/tmp/tmp3nlbqxxc']
+[2025-03-02T08:35:42.943+0100] {standard_task_runner.py:105} INFO - Job 108: Subtask ingest_task
+[2025-03-02T08:35:42.974+0100] {task_command.py:467} INFO - Running <TaskInstance: data_ingestion_dag.ingest_task manual__2025-03-02T07:35:34.826329+00:00 [running]> on host FURBIFY-PTM1PMR.
+[2025-03-02T08:35:43.035+0100] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='savlino' AIRFLOW_CTX_DAG_ID='data_ingestion_dag' AIRFLOW_CTX_TASK_ID='ingest_task' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T07:35:34.826329+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-02T07:35:34.826329+00:00'
+[2025-03-02T08:35:43.036+0100] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-02T08:35:43.080+0100] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-02T08:35:43.083+0100] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-02T08:35:43.084+0100] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=data_ingestion_dag, task_id=ingest_task, run_id=manual__2025-03-02T07:35:34.826329+00:00, execution_date=20250302T073534, start_date=20250302T073542, end_date=20250302T073543
+[2025-03-02T08:35:43.115+0100] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-02T08:35:43.122+0100] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-02T08:35:43.122+0100] {local_task_job_runner.py:245} INFO - ::endgroup::

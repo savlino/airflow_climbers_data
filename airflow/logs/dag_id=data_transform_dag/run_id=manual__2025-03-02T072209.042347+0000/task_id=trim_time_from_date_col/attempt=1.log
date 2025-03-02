@@ -1,0 +1,35 @@
+[2025-03-02T08:22:17.208+0100] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-02T08:22:17.220+0100] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_transform_dag.trim_time_from_date_col manual__2025-03-02T07:22:09.042347+00:00 [queued]>
+[2025-03-02T08:22:17.227+0100] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_transform_dag.trim_time_from_date_col manual__2025-03-02T07:22:09.042347+00:00 [queued]>
+[2025-03-02T08:22:17.227+0100] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-02T08:22:17.242+0100] {taskinstance.py:2890} INFO - Executing <Task(SQLExecuteQueryOperator): trim_time_from_date_col> on 2025-03-02 07:22:09.042347+00:00
+[2025-03-02T08:22:17.244+0100] {standard_task_runner.py:72} INFO - Started process 110546 to run task
+[2025-03-02T08:22:17.247+0100] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'data_transform_dag', 'trim_time_from_date_col', 'manual__2025-03-02T07:22:09.042347+00:00', '--job-id', '96', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_data_transform_dag.py', '--cfg-path', '/tmp/tmpxslxulfs']
+[2025-03-02T08:22:17.248+0100] {standard_task_runner.py:105} INFO - Job 96: Subtask trim_time_from_date_col
+[2025-03-02T08:22:17.276+0100] {task_command.py:467} INFO - Running <TaskInstance: data_transform_dag.trim_time_from_date_col manual__2025-03-02T07:22:09.042347+00:00 [running]> on host FURBIFY-PTM1PMR.
+[2025-03-02T08:22:17.338+0100] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='savlino' AIRFLOW_CTX_DAG_ID='data_transform_dag' AIRFLOW_CTX_TASK_ID='trim_time_from_date_col' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T07:22:09.042347+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-02T07:22:09.042347+00:00'
+[2025-03-02T08:22:17.339+0100] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-02T08:22:17.352+0100] {sql.py:295} INFO - Executing: 
+            UPDATE climbers_table
+            SET
+                date_first = substr(date_first, 1, 10),
+                date_last = substr(date_last, 1, 10);
+        
+[2025-03-02T08:22:17.356+0100] {base.py:84} INFO - Retrieving connection 'sqlite_default'
+[2025-03-02T08:22:17.370+0100] {base.py:84} INFO - Retrieving connection 'sqlite_default'
+[2025-03-02T08:22:17.371+0100] {sql.py:624} INFO - Running statement: 
+            UPDATE climbers_table
+            SET
+                date_first = substr(date_first, 1, 10),
+                date_last = substr(date_last, 1, 10);
+        , parameters: None
+[2025-03-02T08:22:17.377+0100] {sql.py:633} INFO - Rows affected: 10927
+[2025-03-02T08:22:17.380+0100] {logging_mixin.py:190} WARNING - /home/savlino/airflow_venv/lib/python3.12/site-packages/airflow/providers/common/sql/hooks/sql.py:583 DeprecationWarning: Import of fetch_all_handler from the 'airflow.providers.common.sql.hooks' module is deprecated and will
+be removed in the future. Please import it from 'airflow.providers.common.sql.hooks.handlers'.
+[2025-03-02T08:22:17.381+0100] {logging_mixin.py:190} WARNING - /home/savlino/airflow_venv/lib/python3.12/site-packages/airflow/providers/common/sql/operators/sql.py:311 DeprecationWarning: Import of return_single_query_results from the 'airflow.providers.common.sql.hooks' module is deprecated and will
+be removed in the future. Please import it from 'airflow.providers.common.sql.hooks.handlers'.
+[2025-03-02T08:22:17.384+0100] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-02T08:22:17.384+0100] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=data_transform_dag, task_id=trim_time_from_date_col, run_id=manual__2025-03-02T07:22:09.042347+00:00, execution_date=20250302T072209, start_date=20250302T072217, end_date=20250302T072217
+[2025-03-02T08:22:17.420+0100] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-02T08:22:17.440+0100] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-02T08:22:17.448+0100] {local_task_job_runner.py:245} INFO - ::endgroup::

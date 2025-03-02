@@ -1,0 +1,54 @@
+[2025-03-02T08:22:12.588+0100] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-02T08:22:12.595+0100] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_transform_dag.create_new_table manual__2025-03-02T07:22:09.042347+00:00 [queued]>
+[2025-03-02T08:22:12.600+0100] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_transform_dag.create_new_table manual__2025-03-02T07:22:09.042347+00:00 [queued]>
+[2025-03-02T08:22:12.601+0100] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-02T08:22:12.617+0100] {taskinstance.py:2890} INFO - Executing <Task(SQLExecuteQueryOperator): create_new_table> on 2025-03-02 07:22:09.042347+00:00
+[2025-03-02T08:22:12.618+0100] {standard_task_runner.py:72} INFO - Started process 110537 to run task
+[2025-03-02T08:22:12.620+0100] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'data_transform_dag', 'create_new_table', 'manual__2025-03-02T07:22:09.042347+00:00', '--job-id', '94', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_data_transform_dag.py', '--cfg-path', '/tmp/tmpy9fh9o0y']
+[2025-03-02T08:22:12.622+0100] {standard_task_runner.py:105} INFO - Job 94: Subtask create_new_table
+[2025-03-02T08:22:12.652+0100] {task_command.py:467} INFO - Running <TaskInstance: data_transform_dag.create_new_table manual__2025-03-02T07:22:09.042347+00:00 [running]> on host FURBIFY-PTM1PMR.
+[2025-03-02T08:22:12.718+0100] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='savlino' AIRFLOW_CTX_DAG_ID='data_transform_dag' AIRFLOW_CTX_TASK_ID='create_new_table' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T07:22:09.042347+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-02T07:22:09.042347+00:00'
+[2025-03-02T08:22:12.718+0100] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-02T08:22:12.731+0100] {sql.py:295} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS climbers_transformed(
+            id INTEGER PRIMARY KEY,
+            country VARCHAR(5),
+            sex VARCHAR(1),
+            height INTEGER,
+            weight INTEGER,
+            age INTEGER,
+            date_first TEXT,
+            date_last TEXT,
+            grades_count INTEGER,
+            grades_first VARCHAR(8),
+            grades_last VARCHAR(8),
+            grades_max VARCHAR(8)
+        );
+        
+[2025-03-02T08:22:12.735+0100] {base.py:84} INFO - Retrieving connection 'sqlite_default'
+[2025-03-02T08:22:12.748+0100] {base.py:84} INFO - Retrieving connection 'sqlite_default'
+[2025-03-02T08:22:12.749+0100] {sql.py:624} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS climbers_transformed(
+            id INTEGER PRIMARY KEY,
+            country VARCHAR(5),
+            sex VARCHAR(1),
+            height INTEGER,
+            weight INTEGER,
+            age INTEGER,
+            date_first TEXT,
+            date_last TEXT,
+            grades_count INTEGER,
+            grades_first VARCHAR(8),
+            grades_last VARCHAR(8),
+            grades_max VARCHAR(8)
+        );
+        , parameters: None
+[2025-03-02T08:22:12.759+0100] {logging_mixin.py:190} WARNING - /home/savlino/airflow_venv/lib/python3.12/site-packages/airflow/providers/common/sql/hooks/sql.py:583 DeprecationWarning: Import of fetch_all_handler from the 'airflow.providers.common.sql.hooks' module is deprecated and will
+be removed in the future. Please import it from 'airflow.providers.common.sql.hooks.handlers'.
+[2025-03-02T08:22:12.760+0100] {logging_mixin.py:190} WARNING - /home/savlino/airflow_venv/lib/python3.12/site-packages/airflow/providers/common/sql/operators/sql.py:311 DeprecationWarning: Import of return_single_query_results from the 'airflow.providers.common.sql.hooks' module is deprecated and will
+be removed in the future. Please import it from 'airflow.providers.common.sql.hooks.handlers'.
+[2025-03-02T08:22:12.763+0100] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-02T08:22:12.763+0100] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=data_transform_dag, task_id=create_new_table, run_id=manual__2025-03-02T07:22:09.042347+00:00, execution_date=20250302T072209, start_date=20250302T072212, end_date=20250302T072212
+[2025-03-02T08:22:12.794+0100] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-02T08:22:12.811+0100] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-02T08:22:12.819+0100] {local_task_job_runner.py:245} INFO - ::endgroup::
