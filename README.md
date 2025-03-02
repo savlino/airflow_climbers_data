@@ -9,8 +9,8 @@ This project contains Apache Airflow DAGs for data ingestion from local CSVs and
 ##### Setup
 **1.	Clone the repository:**
 ```bash
-git clone https://github.com/savlino/Airflow__ingestAndTransform.git
-cd Airflow__ingestAndTransform
+git clone https://github.com/savlino/airflow_climbers_data.git
+cd airflow
 ```
 **2.	Create a virtual environment and activate it:**
 ```bash
@@ -32,16 +32,18 @@ airflow db init
 ```bash
 airflow users create --username admin --password admin --firstname FIRST_NAME --lastname LAST_NAME --role Admin --email admin@example.com
 ```
-**6.	Start the Airflow web server and scheduler from two separate terminals:**
+**6.	Place contents of current project's "/airflow" (/dags, /data, /tests) directory in /home/\<username\>/airflow directory:**
+
+**7.	Start the Airflow web server and scheduler from two separate terminals:**
 ```bash
 airflow webserver --port 8080
 airflow scheduler
 ```
-**7.	Access Airflow UI on localhost, using username and password to log-in**
+**8.	Access Airflow UI on localhost, using username and password to log-in**
 ```html
 localhost:8080
 ```
-**8.	Run newly imported DAGs from UI**
+**9.	Run newly imported DAGs from UI**
 After successfull completion of DAGs resulting table will be located in local SQLite DB, table 'climbers_transformed'.
 Default path is '/tmp/sqlite_default.db'
 
